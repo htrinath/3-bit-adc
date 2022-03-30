@@ -1,0 +1,10 @@
+* Subcircuit 4_AND_subckt
+.subckt 4_AND_subckt net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad3_ net-_u1-pad4_ net-_u1-pad5_ 
+* d:\analog_vlsi\esim\fossee\esim\library\subcircuitlibrary\4_and_subckt\4_and_subckt.cir
+.include AND_gate.sub
+x1 net-_u1-pad1_ net-_u1-pad2_ net-_x1-pad3_ AND_gate
+x2 net-_u1-pad3_ net-_u1-pad4_ net-_x2-pad3_ AND_gate
+x3 net-_x1-pad3_ net-_x2-pad3_ net-_u1-pad5_ AND_gate
+* Control Statements
+
+.ends 4_AND_subckt

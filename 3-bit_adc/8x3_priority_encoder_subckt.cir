@@ -1,0 +1,27 @@
+* D:\Analog_VLSI\eSIM\FOSSEE\eSim\library\SubcircuitLibrary\8x3_priority_encoder_subckt\8x3_priority_encoder_subckt.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/29/22 16:13:18
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+X9  y2 Net-_X10-Pad2_ Net-_X10-Pad1_ Net-_X12-Pad1_ AND_3_s		
+X10  Net-_X10-Pad1_ Net-_X10-Pad2_ y3 Net-_X10-Pad4_ AND_3_s		
+X12  Net-_X12-Pad1_ Net-_X10-Pad4_ y6 y7 a1 OR_4_subckt		
+X3  y4 Net-_X10-Pad2_ inverter		
+X4  y5 Net-_X10-Pad1_ inverter		
+X6  y1 Net-_X1-Pad2_ Net-_X2-Pad2_ Net-_X5-Pad2_ Net-_X11-Pad1_ AND_4_subckt		
+X7  Net-_X5-Pad2_ Net-_X2-Pad2_ y3 Net-_X11-Pad2_ AND_3_s		
+X8  Net-_X5-Pad2_ y5 Net-_X11-Pad3_ AND		
+X11  Net-_X11-Pad1_ Net-_X11-Pad2_ Net-_X11-Pad3_ y7 a0 OR_4_subckt		
+X1  y2 Net-_X1-Pad2_ inverter		
+X2  y4 Net-_X2-Pad2_ inverter		
+X5  y6 Net-_X5-Pad2_ inverter		
+X13  y4 y5 y6 y7 a2 OR_4_subckt		
+U2  a0 plot_v1		
+U3  a1 plot_v1		
+U4  a2 plot_v1		
+U1  y7 y6 y5 y4 y3 y2 y1 y0 a2 a1 a0 PORT		
+
+.end

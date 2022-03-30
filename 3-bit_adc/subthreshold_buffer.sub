@@ -1,0 +1,12 @@
+* Subcircuit subthreshold_buffer
+.subckt subthreshold_buffer net-_m1-pad2_ net-_m2-pad1_ net-_m1-pad3_ net-_m3-pad1_ 
+* d:\analog_vlsi\esim\fossee\esim\library\subcircuitlibrary\subthreshold_buffer\subthreshold_buffer.cir
+.include NMOS-180nm.lib
+.include PMOS-180nm.lib
+m1 net-_m1-pad1_ net-_m1-pad2_ net-_m1-pad3_ net-_m1-pad3_ CMOSN W=180n L=180n M=1
+m3 net-_m3-pad1_ net-_m1-pad1_ net-_m1-pad3_ net-_m1-pad3_ CMOSN W=3u L=180n M=1
+m2 net-_m2-pad1_ net-_m2-pad1_ net-_m1-pad1_ net-_m2-pad1_ CMOSP W=3u L=180n M=1
+m4 net-_m2-pad1_ net-_m1-pad1_ net-_m3-pad1_ net-_m2-pad1_ CMOSP W=180n L=180n M=1
+* Control Statements
+
+.ends subthreshold_buffer

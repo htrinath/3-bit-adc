@@ -1,0 +1,14 @@
+* D:\Analog_VLSI\eSIM\FOSSEE\eSim\library\SubcircuitLibrary\4_AND_subckt\4_AND_subckt.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/25/22 18:39:19
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+X1  Net-_U1-Pad1_ Net-_U1-Pad2_ Net-_X1-Pad3_ AND		
+X2  Net-_U1-Pad3_ Net-_U1-Pad4_ Net-_X2-Pad3_ AND		
+X3  Net-_X1-Pad3_ Net-_X2-Pad3_ Net-_U1-Pad5_ AND		
+U1  Net-_U1-Pad1_ Net-_U1-Pad2_ Net-_U1-Pad3_ Net-_U1-Pad4_ Net-_U1-Pad5_ PORT		
+
+.end

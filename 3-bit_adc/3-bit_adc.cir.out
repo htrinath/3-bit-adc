@@ -1,0 +1,63 @@
+* d:\analog_vlsi\mixed_signal_projects\3-bit_adc\3-bit_adc.cir
+
+.include buffer_subckt.sub
+.include comparator_subckt.sub
+.include subthreshold_buffer.sub
+.include 8x3_priority_encoder_subckt.sub
+X1  lvl7 vin GND lvl7 GND a7 comparator_subckt		
+X2  lvl6 vin GND lvl6 GND a6 comparator_subckt		
+X3  lvl5 vin GND lvl5 GND a5 comparator_subckt		
+X4  lvl4 vin GND lvl4 GND a4 comparator_subckt		
+X5  lvl3 vin GND lvl3 GND a3 comparator_subckt		
+X6  lvl2 vin GND lvl2 GND a2 comparator_subckt		
+X7  lvl1 vin GND lvl1 GND a1 comparator_subckt		
+X8  lvl0 vin GND lvl0 GND a0 comparator_subckt		
+R1  lvl7 lvl6 100		
+v1  lvl7 GND dc 1.8		
+R2  lvl6 lvl5 100		
+R3  lvl5 lvl4 100		
+R4  lvl4 lvl3 100		
+R5  lvl3 lvl2 100		
+R6  lvl2 lvl1 100		
+R7  lvl1 lvl0 100		
+R8  lvl0 GND 100		
+v2  vin GND sine(1 1 0.125 0 0)		
+*U1  a7 plot_v1		
+*U2  a6 plot_v1		
+*U3  a5 plot_v1		
+*U6  a2 plot_v1		
+*U4  a4 plot_v1		
+*U5  a3 plot_v1		
+*U7  a1 plot_v1		
+*U8  a0 plot_v1		
+*U10  out7 plot_v1		
+*U11  out6 plot_v1		
+*U16  out5 plot_v1		
+*U9  out4 plot_v1		
+*U12  out3 plot_v1		
+*U13  out2 plot_v1		
+*U14  out1 plot_v1		
+*U15  out0 plot_v1		
+X9  a7 lvl7 GND out7 buffer_subckt		
+X10  a6 lvl7 GND out6 buffer_subckt		
+X11  a5 lvl7 GND out5 buffer_subckt		
+X12  a4 lvl7 GND out4 buffer_subckt		
+X13  a3 lvl7 GND out3 buffer_subckt		
+X14  a2 lvl7 GND out2 subthreshold_buffer		
+X15  a1 lvl7 GND out1 subthreshold_buffer		
+X16  a0 lvl7 GND out0 subthreshold_buffer		
+X17  out7 out6 out5 out4 out3 out2 out1 out0 adc2 adc1 adc0 8x3_priority_encoder_subckt		
+*U17  adc2 plot_v1		
+*U18  adc1 plot_v1		
+*U19  adc0 plot_v1 
+.tran 1e-00 10e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(vin)+6 v(lvl7)+6 v(lvl6)+6 v(lvl5)+6 v(lvl4)+6 v(lvl3)+6 v(lvl2)+6 v(lvl1)+6 v(lvl0)+6 v(adc2)+4 v(adc1)+2 v(adc0)
+plot v(vin) v(a7) v(a6) v(a5) v(a4) v(a3) v(a2) v(a1) v(a0)
+.endc
+.end

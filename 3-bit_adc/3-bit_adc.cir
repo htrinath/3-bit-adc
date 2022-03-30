@@ -1,0 +1,56 @@
+* D:\Analog_VLSI\mixed_signal_projects\3-bit_adc\3-bit_adc.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/29/22 16:43:54
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+X1  lvl7 vin GND lvl7 GND a7 Comparator		
+X2  lvl6 vin GND lvl6 GND a6 Comparator		
+X3  lvl5 vin GND lvl5 GND a5 Comparator		
+X4  lvl4 vin GND lvl4 GND a4 Comparator		
+X5  lvl3 vin GND lvl3 GND a3 Comparator		
+X6  lvl2 vin GND lvl2 GND a2 Comparator		
+X7  lvl1 vin GND lvl1 GND a1 Comparator		
+X8  lvl0 vin GND lvl0 GND a0 Comparator		
+R1  lvl7 lvl6 100		
+v1  lvl7 GND DC		
+R2  lvl6 lvl5 100		
+R3  lvl5 lvl4 100		
+R4  lvl4 lvl3 100		
+R5  lvl3 lvl2 100		
+R6  lvl2 lvl1 100		
+R7  lvl1 lvl0 100		
+R8  lvl0 GND 100		
+v2  vin GND sine		
+U1  a7 plot_v1		
+U2  a6 plot_v1		
+U3  a5 plot_v1		
+U6  a2 plot_v1		
+U4  a4 plot_v1		
+U5  a3 plot_v1		
+U7  a1 plot_v1		
+U8  a0 plot_v1		
+U10  out7 plot_v1		
+U11  out6 plot_v1		
+U16  out5 plot_v1		
+U9  out4 plot_v1		
+U12  out3 plot_v1		
+U13  out2 plot_v1		
+U14  out1 plot_v1		
+U15  out0 plot_v1		
+X9  a7 lvl7 GND out7 buffer		
+X10  a6 lvl7 GND out6 buffer		
+X11  a5 lvl7 GND out5 buffer		
+X12  a4 lvl7 GND out4 buffer		
+X13  a3 lvl7 GND out3 buffer		
+X14  a2 lvl7 GND out2 buffer_sub		
+X15  a1 lvl7 GND out1 buffer_sub		
+X16  a0 lvl7 GND out0 buffer_sub		
+X17  out7 out6 out5 out4 out3 out2 out1 out0 adc2 adc1 adc0 8x3_encoder		
+U17  adc2 plot_v1		
+U18  adc1 plot_v1		
+U19  adc0 plot_v1		
+
+.end

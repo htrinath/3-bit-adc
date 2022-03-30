@@ -1,0 +1,24 @@
+* Subcircuit 8x3_priority_encoder_subckt
+.subckt 8x3_priority_encoder_subckt y7 y6 y5 y4 y3 y2 y1 y0 a2 a1 a0 
+* d:\Analog_VLSI\eSIM\FOSSEE\eSim\library\SubcircuitLibrary\8x3_priority_encoder_subckt\8x3_priority_encoder_subckt.cir
+.include inverter_subckt.sub
+.include AND_gate.sub
+.include 3_AND_subckt.sub
+.include 4_OR_subckt.sub
+.include 4_AND_subckt.sub
+X9  y2 Net-_X10-Pad2_ Net-_X10-Pad1_ Net-_X12-Pad1_ 3_AND_subckt		
+X10  Net-_X10-Pad1_ Net-_X10-Pad2_ y3 Net-_X10-Pad4_ 3_AND_subckt		
+X12  Net-_X12-Pad1_ Net-_X10-Pad4_ y6 y7 a1 4_OR_subckt		
+X3  y4 Net-_X10-Pad2_ inverter_subckt		
+X4  y5 Net-_X10-Pad1_ inverter_subckt		
+X6  y1 Net-_X1-Pad2_ Net-_X2-Pad2_ Net-_X5-Pad2_ Net-_X11-Pad1_ 4_AND_subckt		
+X7  Net-_X5-Pad2_ Net-_X2-Pad2_ y3 Net-_X11-Pad2_ 3_AND_subckt		
+X8  Net-_X5-Pad2_ y5 Net-_X11-Pad3_ AND_gate		
+X11  Net-_X11-Pad1_ Net-_X11-Pad2_ Net-_X11-Pad3_ y7 a0 4_OR_subckt		
+X1  y2 Net-_X1-Pad2_ inverter_subckt		
+X2  y4 Net-_X2-Pad2_ inverter_subckt		
+X5  y6 Net-_X5-Pad2_ inverter_subckt		
+X13  y4 y5 y6 y7 a2 4_OR_subckt		
+* Control Statements
+
+.ends 8x3_priority_encoder_subckt
