@@ -1,0 +1,30 @@
+* D:\Analog_VLSI\mixed_signal_projects\comparator_test\comparator_test.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/24/22 12:23:04
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+M6  vref GND Net-_M3-Pad1_ vref eSim_MOS_P		
+M3  Net-_M3-Pad1_ vref Net-_M1-Pad1_ vref eSim_MOS_P		
+M9  Net-_M3-Pad1_ vin Net-_M10-Pad1_ vref eSim_MOS_P		
+M8  Net-_M10-Pad1_ Net-_M12-Pad2_ Net-_M11-Pad1_ vref eSim_MOS_P		
+M4  Net-_M1-Pad1_ Net-_M11-Pad1_ Net-_M12-Pad2_ vref eSim_MOS_P		
+M7  Net-_M11-Pad1_ Net-_M12-Pad2_ GND GND eSim_MOS_N		
+M5  Net-_M12-Pad2_ Net-_M11-Pad1_ GND GND eSim_MOS_N		
+M1  Net-_M1-Pad1_ GND GND GND eSim_MOS_N		
+M2  Net-_M12-Pad2_ GND GND GND eSim_MOS_N		
+M10  Net-_M10-Pad1_ GND GND GND eSim_MOS_N		
+M11  Net-_M11-Pad1_ GND GND GND eSim_MOS_N		
+v2  vref GND DC		
+v1  Net-_M13-Pad1_ GND DC		
+M13  Net-_M13-Pad1_ Net-_M12-Pad2_ out2 Net-_M13-Pad1_ eSim_MOS_P		
+M12  out2 Net-_M12-Pad2_ GND GND eSim_MOS_N		
+M15  Net-_M13-Pad1_ Net-_M11-Pad1_ out1 Net-_M13-Pad1_ eSim_MOS_P		
+M14  out1 Net-_M11-Pad1_ GND GND eSim_MOS_N		
+U1  out2 plot_v1		
+U2  out1 plot_v1		
+v3  vin GND pwl		
+
+.end

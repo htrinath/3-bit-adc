@@ -1,0 +1,21 @@
+* d:\analog_vlsi\mixed_signal_projects\buffer_sub\buffer_sub.cir
+
+.include NMOS-180nm.lib
+.include PMOS-180nm.lib
+m1 out1 in gnd gnd CMOSN W=180n L=180n M=1
+v1 net-_m2-pad1_ gnd  dc 1.8
+v2  in gnd pulse(0 100m 0 1u 1u 1 2)
+* u1  out plot_v1
+m3 out out1 gnd gnd CMOSN W=3u L=180n M=1
+m2 net-_m2-pad1_ net-_m2-pad1_ out1 net-_m2-pad1_ CMOSP W=3u L=180n M=1
+m4 net-_m2-pad1_ out1 out net-_m2-pad1_ CMOSP W=180n L=180n M=1
+.tran 1e-00 10e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(in)+2 v(out)
+.endc
+.end

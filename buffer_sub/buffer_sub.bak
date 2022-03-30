@@ -1,0 +1,237 @@
+EESchema Schematic File Version 2
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:power
+LIBS:eSim_Plot
+LIBS:transistors
+LIBS:conn
+LIBS:eSim_User
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:eSim_Analog
+LIBS:eSim_Devices
+LIBS:eSim_Digital
+LIBS:eSim_Hybrid
+LIBS:eSim_Miscellaneous
+LIBS:eSim_Power
+LIBS:eSim_Sources
+LIBS:eSim_Subckt
+LIBS:eSim_Nghdl
+LIBS:eSim_Ngveri
+LIBS:buffer_sub-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L eSim_MOS_N M1
+U 1 1 62419D9F
+P 4625 6425
+F 0 "M1" H 4625 6275 50  0000 R CNN
+F 1 "eSim_MOS_N" H 4725 6375 50  0000 R CNN
+F 2 "" H 4925 6125 29  0000 C CNN
+F 3 "" H 4725 6225 60  0000 C CNN
+	1    4625 6425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4825 6225 4825 6425
+Wire Wire Line
+	4925 6175 5000 6175
+Wire Wire Line
+	4825 5600 4825 5825
+Wire Wire Line
+	4925 6775 4925 6900
+Wire Wire Line
+	4925 6900 4825 6900
+Wire Wire Line
+	4825 7525 4825 6825
+$Comp
+L DC v1
+U 1 1 62419E07
+P 3750 6075
+F 0 "v1" H 3550 6175 60  0000 C CNN
+F 1 "DC" H 3550 6025 60  0000 C CNN
+F 2 "R1" H 3450 6075 60  0000 C CNN
+F 3 "" H 3750 6075 60  0000 C CNN
+	1    3750 6075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 5600 5675 5600
+Wire Wire Line
+	3750 5600 3750 5625
+$Comp
+L GND #PWR01
+U 1 1 62419E95
+P 3750 6575
+F 0 "#PWR01" H 3750 6325 50  0001 C CNN
+F 1 "GND" H 3750 6425 50  0000 C CNN
+F 2 "" H 3750 6575 50  0001 C CNN
+F 3 "" H 3750 6575 50  0001 C CNN
+	1    3750 6575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 6525 3750 6575
+$Comp
+L pulse v2
+U 1 1 62419EBF
+P 4425 7075
+F 0 "v2" H 4225 7175 60  0000 C CNN
+F 1 "pulse" H 4225 7025 60  0000 C CNN
+F 2 "R1" H 4125 7075 60  0000 C CNN
+F 3 "" H 4425 7075 60  0000 C CNN
+	1    4425 7075
+	1    0    0    -1  
+$EndComp
+Connection ~ 4825 6900
+Connection ~ 4425 7525
+$Comp
+L GND #PWR02
+U 1 1 6241A100
+P 4275 7550
+F 0 "#PWR02" H 4275 7300 50  0001 C CNN
+F 1 "GND" H 4275 7400 50  0000 C CNN
+F 2 "" H 4275 7550 50  0001 C CNN
+F 3 "" H 4275 7550 50  0001 C CNN
+	1    4275 7550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4275 7550 4275 7525
+Text GLabel 4425 6550 0    60   Input ~ 0
+in
+Text GLabel 6050 6350 2    60   Output ~ 0
+out
+Wire Wire Line
+	5500 6350 6050 6350
+Connection ~ 4825 6350
+$Comp
+L plot_v1 U1
+U 1 1 6241A1FF
+P 5875 6500
+F 0 "U1" H 5875 7000 60  0000 C CNN
+F 1 "plot_v1" H 6075 6850 60  0000 C CNN
+F 2 "" H 5875 6500 60  0000 C CNN
+F 3 "" H 5875 6500 60  0000 C CNN
+	1    5875 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5875 6300 5875 6350
+Connection ~ 5875 6350
+Wire Wire Line
+	4425 6025 4525 6025
+Connection ~ 4550 5600
+Wire Wire Line
+	4525 6625 4425 6625
+Wire Wire Line
+	4425 6625 4425 6550
+Wire Wire Line
+	4425 5775 4550 5775
+Wire Wire Line
+	4550 5775 4550 5600
+Wire Wire Line
+	4425 5775 4425 6025
+Wire Wire Line
+	5000 6175 5000 5600
+Connection ~ 4825 5600
+Wire Wire Line
+	4275 7525 4825 7525
+Wire Wire Line
+	5500 5600 5500 5800
+Connection ~ 5000 5600
+Wire Wire Line
+	5500 7075 4825 7075
+Connection ~ 4825 7075
+$Comp
+L eSim_MOS_N M3
+U 1 1 6241AA73
+P 5300 6450
+F 0 "M3" H 5300 6300 50  0000 R CNN
+F 1 "eSim_MOS_N" H 5400 6400 50  0000 R CNN
+F 2 "" H 5600 6150 29  0000 C CNN
+F 3 "" H 5400 6250 60  0000 C CNN
+	1    5300 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 6150 5675 6150
+Wire Wire Line
+	5675 6150 5675 5600
+Connection ~ 5500 5600
+Wire Wire Line
+	5200 6000 5200 6650
+Wire Wire Line
+	5500 6850 5500 7075
+Wire Wire Line
+	5600 6800 5600 6950
+Wire Wire Line
+	5600 6950 5500 6950
+Connection ~ 5500 6950
+Wire Wire Line
+	5500 6200 5500 6450
+Wire Wire Line
+	4825 6350 5200 6350
+Connection ~ 5200 6350
+Connection ~ 5500 6350
+Text GLabel 4925 6275 2    60   Output ~ 0
+out1
+Wire Wire Line
+	4925 6275 4875 6275
+Wire Wire Line
+	4875 6275 4875 6350
+Connection ~ 4875 6350
+$Comp
+L eSim_MOS_P M2
+U 1 1 6241AD35
+P 4675 6025
+F 0 "M2" H 4625 6075 50  0000 R CNN
+F 1 "eSim_MOS_P" H 4725 6175 50  0000 R CNN
+F 2 "" H 4925 6125 29  0000 C CNN
+F 3 "" H 4725 6025 60  0000 C CNN
+	1    4675 6025
+	1    0    0    -1  
+$EndComp
+$Comp
+L eSim_MOS_P M4
+U 1 1 6241ADCC
+P 5350 6000
+F 0 "M4" H 5300 6050 50  0000 R CNN
+F 1 "eSim_MOS_P" H 5400 6150 50  0000 R CNN
+F 2 "" H 5600 6100 29  0000 C CNN
+F 3 "" H 5400 6000 60  0000 C CNN
+	1    5350 6000
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

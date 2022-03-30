@@ -1,0 +1,17 @@
+* D:\Analog_VLSI\mixed_signal_projects\buffer_sub\buffer_sub.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/28/22 17:25:34
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+M1  out1 in GND GND eSim_MOS_N		
+v1  Net-_M2-Pad1_ GND DC		
+v2  in GND pulse		
+U1  out plot_v1		
+M3  out out1 GND GND eSim_MOS_N		
+M2  Net-_M2-Pad1_ Net-_M2-Pad1_ out1 Net-_M2-Pad1_ eSim_MOS_P		
+M4  Net-_M2-Pad1_ out1 out Net-_M2-Pad1_ eSim_MOS_P		
+
+.end

@@ -1,0 +1,25 @@
+* d:\analog_vlsi\mixed_signal_projects\4x2_priority_encoder\4x2_priority_encoder.cir
+
+.include inverter_subckt.sub
+.include AND_gate.sub
+.include 3_OR_subckt.sub
+x2 net-_x1-pad2_ d1 net-_x2-pad3_ AND_gate
+x3 net-_x2-pad3_ d3 d3 a0 3_OR_subckt
+x1 d2 net-_x1-pad2_ inverter_subckt
+x4 d3 d3 d2 a1 3_OR_subckt
+v2  d2 gnd pulse(0 1.8 0 1u 1u 2 4)
+v3  d1 gnd pulse(0 1.8 0 1u 1u 1 2)
+v4  d3 gnd pulse(0 1.8 0 1u 1u 4 8)
+v1  d0 gnd pulse(0 1.8 0 1u 1u 0.5 1)
+* u1  a0 plot_v1
+* u2  a1 plot_v1
+.tran 1e-00 10e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(d3)+10 v(d2)+8 v(d1)+6 v(d0)+4 v(a1)+2 v(a0)
+.endc
+.end

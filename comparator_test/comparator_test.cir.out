@@ -1,0 +1,34 @@
+* d:\analog_vlsi\mixed_signal_projects\comparator_test\comparator_test.cir
+
+.include PMOS-180nm.lib
+.include NMOS-180nm.lib
+m6 vref gnd net-_m3-pad1_ vref CMOSP W=180n L=180n M=1
+m3 net-_m3-pad1_ vref net-_m1-pad1_ vref CMOSP W=180n L=180n M=1
+m9 net-_m3-pad1_ vin net-_m10-pad1_ vref CMOSP W=180n L=180n M=1
+m8 net-_m10-pad1_ net-_m12-pad2_ net-_m11-pad1_ vref CMOSP W=180n L=180n M=1
+m4 net-_m1-pad1_ net-_m11-pad1_ net-_m12-pad2_ vref CMOSP W=180n L=180n M=1
+m7 net-_m11-pad1_ net-_m12-pad2_ gnd gnd CMOSN W=180n L=180n M=1
+m5 net-_m12-pad2_ net-_m11-pad1_ gnd gnd CMOSN W=180n L=180n M=1
+m1 net-_m1-pad1_ gnd gnd gnd CMOSN W=180n L=180n M=1
+m2 net-_m12-pad2_ gnd gnd gnd CMOSN W=180n L=180n M=1
+m10 net-_m10-pad1_ gnd gnd gnd CMOSN W=180n L=180n M=1
+m11 net-_m11-pad1_ gnd gnd gnd CMOSN W=180n L=180n M=1
+v2 vref gnd  dc 1.5
+v1 net-_m13-pad1_ gnd  dc 2
+m13 net-_m13-pad1_ net-_m12-pad2_ out2 net-_m13-pad1_ CMOSP W=180n L=180n M=1
+m12 out2 net-_m12-pad2_ gnd gnd CMOSN W=180n L=180n M=1
+m15 net-_m13-pad1_ net-_m11-pad1_ out1 net-_m13-pad1_ CMOSP W=180n L=180n M=1
+m14 out1 net-_m11-pad1_ gnd gnd CMOSN W=180n L=180n M=1
+* u1  out2 plot_v1
+* u2  out1 plot_v1
+v3  vin gnd pwl(0 0 0.5 1 1 2 1.5 1 2 0 2.5 1 3 1.5 3.5 2 4 1.5 4.5 1 5 0.5 5.5 0)
+.tran 1e-00 10e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(vin) v(vref) v(out1)
+.endc
+.end

@@ -1,0 +1,20 @@
+* D:\Analog_VLSI\mixed_signal_projects\4x2_priority_encoder\4x2_priority_encoder.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/28/22 20:48:26
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+X2  Net-_X1-Pad2_ d1 Net-_X2-Pad3_ AND		
+X3  Net-_X2-Pad3_ d3 d3 a0 OR		
+X1  d2 Net-_X1-Pad2_ inverter		
+X4  d3 d3 d2 a1 OR		
+v2  d2 GND pulse		
+v3  d1 GND pulse		
+v4  d3 GND pulse		
+v1  ? GND pulse		
+U1  a0 plot_v1		
+U2  a1 plot_v1		
+
+.end
