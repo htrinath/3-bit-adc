@@ -145,21 +145,21 @@ After making the schematic and generating the netlist go back to eSim; select th
 
 ### 2-Bit Analog to Digital Converter:
 <p align="center">
-  <img src="Images/2bit_adc_transient.png"></br>
+  <img src="Images/2-bit_adc_transient.png"></br>
   Fig. 15: Transient Analysis of 2-Bit ADC:
 </p>
 <p align="center">
-  <img src="Images/2bit_adc_transient_2.png"></br>
+  <img src="Images/2-bit_adc_transient_2.png"></br>
   Fig. 16: Vin, Comparator Outputs Vs Time:
 </p>
 
 ### 3-Bit Analog to Digital Converter:
 <p align="center">
-  <img src="Images/3bit_adc_transient.png"></br>
+  <img src="Images/3-bit_adc_transient.png"></br>
   Fig. 17: Transient Analysis of 3-Bit ADC:
 </p>
 <p align="center">
-  <img src="Images/3bit_adc_transient_2.png"></br>
+  <img src="Images/3-bit_adc_transient_2.png"></br>
   Fig. 18: Vin, Comparator Outputs Vs Time:
 </p>
 
