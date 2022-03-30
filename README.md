@@ -20,7 +20,7 @@ This repository presents the analog design of 3-Bit Analog to Digital Converter 
 # Introduction:
 Every signal found in the world is Analog in nature but the computers do no understand analog inputs; so to process the analog signals we have to convert it into 1's and 0's. This is where the ADCs come in. Basically an ADC takes a snapshot of an analog voltage at one instant in time and produces a digital output code which represents this analogue voltage. The number of binary digits, or bits used to represent this analogue voltage value depends on the resolution of an A/D converter.
 
-For example a 2-bit ADC will have a resolution of 3 whereas an 3-bit ADC will have a resolution of one part in 7. Thus an ADC takes an unknown continuous analog signal and converts it into an n-bit binary number of 2^n bits.
+For example a 2-bit ADC will have a resolution of 3 whereas an 3-bit ADC will have a resolution of 7. Thus an ADC takes an unknown continuous analog signal and converts it into an n-bit binary number of 2^n bits.
 
 # Building Blocks for a Analog to Digital Converter:
 The building blocks of a typical Flash-type ADC are 2^n Comparators and a 2^n X n Priority Encoder. The basic architecture ADC is as follows:
