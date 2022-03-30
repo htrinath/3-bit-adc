@@ -1,0 +1,11 @@
+* Subcircuit inverter_subckt
+.subckt inverter_subckt net-_m1-pad2_ net-_m1-pad1_ 
+* d:\analog_vlsi\esim\fossee\esim\library\subcircuitlibrary\inverter_subckt\inverter_subckt.cir
+.include NMOS-180nm.lib
+.include PMOS-180nm.lib
+m2 net-_m2-pad1_ net-_m1-pad2_ net-_m1-pad1_ net-_m2-pad1_ CMOSP W=360n L=180n M=1
+m1 net-_m1-pad1_ net-_m1-pad2_ gnd gnd CMOSN W=180n L=180n M=1
+v1 net-_m2-pad1_ gnd  dc 1.8
+* Control Statements
+
+.ends inverter_subckt

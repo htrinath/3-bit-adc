@@ -1,0 +1,34 @@
+* d:\analog_vlsi\mixed_signal_projects\2-bit_adc\2-bit_adc.cir
+
+.include buffer_subckt.sub
+.include subthreshold_buffer.sub
+.include 4x2_priority_encoder_subckt.sub
+.include comparator_subckt.sub
+x1 l3 vin gnd l3 gnd o3 comparator_subckt
+x2 l2 vin gnd l2 gnd o2 comparator_subckt
+x3 l1 vin gnd l1 gnd o1 comparator_subckt
+x4 l0 vin gnd l0 gnd o0 comparator_subckt
+r1  l3 l2 100
+r2  l2 l1 100
+r3  l1 l0 100
+r4  l0 gnd 100
+v1 l3 gnd  dc 1.8
+v2  vin gnd sine(1 1 0.125 0 0)
+x7 o1 l3 gnd a1 subthreshold_buffer
+x8 o0 l3 gnd a0 subthreshold_buffer
+x5 o3 l3 gnd a3 buffer_subckt
+x6 o2 l3 gnd a2 buffer_subckt
+x9 a3 a2 a1 a0 adc1 adc0 4x2_priority_encoder_subckt
+* u1  o1 plot_v1
+* u2  o0 plot_v1
+.tran 1e-00 10e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(vin)+4 v(l3)+4 v(l2)+4 v(l1)+4 v(l0)+4 v(adc1)+2 v(adc0)
+plot v(vin) v(o3) v(o2) v(o1) v(o0)
+.endc
+.end

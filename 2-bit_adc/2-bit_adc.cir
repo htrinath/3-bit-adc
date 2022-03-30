@@ -1,0 +1,27 @@
+* D:\Analog_VLSI\mixed_signal_projects\2-bit_adc\2-bit_adc.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/28/22 21:13:59
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+X1  l3 vin GND l3 GND Net-_X1-Pad6_ Comparator		
+X2  l2 vin GND l2 GND Net-_X2-Pad6_ Comparator		
+X3  l1 vin GND l1 GND Net-_X3-Pad6_ Comparator		
+X4  l0 vin GND l0 GND Net-_X4-Pad6_ Comparator		
+R1  l3 l2 100		
+R2  l2 l1 100		
+R3  l1 l0 100		
+R4  l0 GND 100		
+v1  l3 GND DC		
+v2  vin GND sine		
+X7  Net-_X3-Pad6_ l3 GND a1 buffer_sub		
+X8  Net-_X4-Pad6_ l3 GND a0 buffer_sub		
+X5  Net-_X1-Pad6_ l3 GND a3 buffer		
+X6  Net-_X2-Pad6_ l3 GND a2 buffer		
+X9  a3 a2 a1 a0 o1 o0 4x2Encoder		
+U1  o1 plot_v1		
+U2  o0 plot_v1		
+
+.end

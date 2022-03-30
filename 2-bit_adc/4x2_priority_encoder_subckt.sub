@@ -1,0 +1,13 @@
+* Subcircuit 4x2_priority_encoder_subckt
+.subckt 4x2_priority_encoder_subckt net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad3_ ? net-_u1-pad5_ net-_u1-pad6_ 
+* d:\analog_vlsi\esim\fossee\esim\library\subcircuitlibrary\4x2_priority_encoder_subckt\4x2_priority_encoder_subckt.cir
+.include 3_OR_subckt.sub
+.include inverter_subckt.sub
+.include AND_gate.sub
+x2 net-_x1-pad2_ net-_u1-pad3_ net-_x2-pad3_ AND_gate
+x3 net-_x2-pad3_ net-_u1-pad1_ net-_u1-pad1_ net-_u1-pad6_ 3_OR_subckt
+x1 net-_u1-pad2_ net-_x1-pad2_ inverter_subckt
+x4 net-_u1-pad1_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad5_ 3_OR_subckt
+* Control Statements
+
+.ends 4x2_priority_encoder_subckt
